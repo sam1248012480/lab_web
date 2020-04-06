@@ -12,7 +12,9 @@
     "vue": "^2.6.11",
     "vue-material-design-icons": "^4.4.0",
     "vue-router": "^3.1.5",
-    "vuetify": "^2.2.11"
+    "vue-video-player": "^5.0.2",
+    "vuetify": "^2.2.11",
+    "vuetify-media-player": "^0.8.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.2.0",
