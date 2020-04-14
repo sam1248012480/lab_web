@@ -3,7 +3,7 @@
     <NavBar></NavBar>
     <bannerr></bannerr>
     <imgd></imgd>
-    
+    <videoo></videoo>
     <tablee></tablee>
     
 
@@ -19,13 +19,14 @@ import NavBar from '@/components/Navbar'
 import imgd from '@/components/img'
 import tablee from '@/components/table'
 import bannerr from '@/components/banner'
+import videoo from '@/components/videos'
 
 
 export default {
   name: 'App',
 
   components: {
-    NavBar,imgd,bannerr,tablee
+    NavBar,imgd,videoo,bannerr,tablee
   },
 
   data: () => ({

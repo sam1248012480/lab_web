@@ -1,11 +1,12 @@
 <template>
+
   <v-container class="grey lighten-5" >
     <v-row>
-      <v-col>
-        <v-img src="https://picsum.photos/510/300?random" aspect-ratio = '2'></v-img>
+      <v-col cols="4" md="4">
+        <v-img src="https://instagram.frmq2-1.fna.fbcdn.net/v/t51.2885-15/e35/s1080x1080/92505606_543970509652618_998397044031841983_n.jpg?_nc_ht=instagram.frmq2-1.fna.fbcdn.net&_nc_cat=110&_nc_ohc=H6lTjSv5LBgAX8cJiWh&oh=6b7d0c3af1a40550094cb659574ebf6d&oe=5EBC4B36" aspect-ratio = '1'></v-img>
       </v-col>
 
-      <v-col>
+      <v-col >
 
         <div>
             <div class= 'display-1'>米米</div>
@@ -25,6 +26,7 @@
 
     
   </div>
+
       </v-col>
     </v-row>
   </v-container>
