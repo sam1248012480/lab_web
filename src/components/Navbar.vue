@@ -36,7 +36,7 @@
     </v-navigation-drawer> -->
 
     
-    <v-navigation-drawer v-model="drawer" class="mt-10 elevation-1 indigo" style="top:25px" temporary app >
+    <v-navigation-drawer v-model="drawer"  temporary app  class="mt-10 elevation-1 indigo" style="top:25px">
       <v-list dense nav>
         <v-list-item v-for="link in links" :key="link.text" :to="link.route">
           <v-list-item-icon>
@@ -58,6 +58,7 @@ export default {
     return {
       toolbar:true,  
       drawer: false,
+      clipped:false,
       links: [
         { icon: "mdi-view-dashboard", text: "Dashboard", route: "/" },
         {icon: 'mdi-view-dashboard',text:'Home',route:'/home'},
