@@ -4,9 +4,8 @@
     <!-- 裡面一定要用到不然會報錯(step.3) -->
     <Carousels></Carousels>
     <Bottom_area></Bottom_area>
+    <Card></Card>
     
-
-
     <v-content>
      <router-view></router-view>
     </v-content>
@@ -19,6 +18,8 @@ import NavBar from '@/components/Navbar'
 //有新的Components這邊要先import(step.1)
 import Carousels from '@/components/Carousels'
 import Bottom_area from '@/components/Bottom_area'
+import Card from '@/components/Card'
+
 
 export default {
   name: 'App',
@@ -27,7 +28,8 @@ export default {
     NavBar,
     //此處要註冊(step.2)
     Carousels,
-    Bottom_area
+    Bottom_area,
+    Card
     
   },
 

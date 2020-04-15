@@ -1,14 +1,14 @@
 <template>
   <nav>
     
-    <v-toolbar  flat class=elevation-1>
-      <v-app-bar-nav-icon @click="drawer = !drawer" ></v-app-bar-nav-icon>
+    <v-toolbar  text class=elevation-1>
+      <!-- <v-app-bar-nav-icon @click="drawer = !drawer" ></v-app-bar-nav-icon> -->
       <v-toolbar-title class="text-uppercase grey--text">
-        <span class="font-weight-light">Toolbar</span>
+        <span class="font-weight-light">健身房</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn flat color="grey">
-        <span>Sign out</span>
+      <v-btn text color="grey">
+        <span>管理登入</span>
         <v-icon right>mdi-exit-to-app</v-icon>
       </v-btn>
     </v-toolbar>
