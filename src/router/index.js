@@ -1,8 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import DeliveryHomepage from '../views/DeliveryHomepage.vue'
+//需呼叫views 要再這邊註冊step.1
+import Infopage from '../views/Infopage.vue'
 import Home from '../views/Home.vue'
-import Card from '../views/Card.vue'
-import MD from 'vue-material-design-icons/Menu.vue'
+import StayHomepage from '../views/StayHomepage.vue'
+import GameRule from '../views/GameRule.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -12,17 +16,26 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/StayHomepage',
+    name: 'StayHomepage',
+    component: StayHomepage
   },
   {
-    path: '/Card',
-    name: 'Card',
-    component:Card,MD
+    path: '/DeliveryHomepage',
+    name: 'DeliveryHomepage',
+    component: DeliveryHomepage
+  },
+  {
+    path: '/GameRule',
+    name: 'GameRule',
+    component: GameRule
+  },
+
+  //需註冊Views網頁 step.2
+  {
+    path: '/Infopage',
+    name: 'Infopage',
+    component:Infopage
   }
 ]
 
