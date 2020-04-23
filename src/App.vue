@@ -4,8 +4,7 @@
     <bannerr></bannerr>
     <imgd></imgd>
     <videoo></videoo>
-
-    
+    <test></test>
 
     <v-content>
      <router-view></router-view>
@@ -17,16 +16,16 @@
 <script>
 import NavBar from '@/components/Navbar'
 import imgd from '@/components/img'
-
 import bannerr from '@/components/banner'
 import videoo from '@/components/videos'
+import test from '@/components/test'
 
 
 export default {
   name: 'App',
 
   components: {
-    NavBar,imgd,videoo,bannerr
+    NavBar,imgd,videoo,bannerr,test
   },
 
   data: () => ({
