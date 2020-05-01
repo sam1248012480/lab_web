@@ -30,12 +30,11 @@ const routes = [
     name: 'GameRule',
     component: GameRule
   },
-
   //需註冊Views網頁 step.2
   {
     path: '/Infopage',
     name: 'Infopage',
-    component:Infopage
+    component: Infopage
   }
 ]
 
