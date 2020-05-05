@@ -66,14 +66,17 @@ export default {
     getData() {
       console.log(this.current_area, this.current_money);
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      const url = "http://140.125.45.160:8000/info/"; // origin api url
+      const url = "http://140.125.45.160:8000/info"; // origin api url
       this.axios
-        .post(`${cors}${url}`, {
-          area: this.current_area,
-          cost: this.current_money
-        })
+        .post(
+          `${cors}${url}`,
+          this.Qs.stringify({
+            area: this.current_area,
+            cost: this.current_money
+          })
+        )
         .then(response => {
-          // console.log(response) 印資料在Console
+          // console.log(response) //印資料在Console
           this.card = response.data;
         })
         .catch(function(error) {

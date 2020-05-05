@@ -5,6 +5,9 @@ import vuetify from './plugins/vuetify'
 //使用axios 語法step.1
 import axios from 'axios';
 import VueAxios from 'vue-axios'
+import Qs from 'qs';
+
+Vue.prototype.Qs = Qs;
 
 // 註冊到全局組件Vueaxios,axios step.2
 Vue.use(VueAxios, axios)

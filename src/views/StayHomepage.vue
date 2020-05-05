@@ -68,7 +68,7 @@ export default {
     getData() {
       // console.log(this.current_area, this.current_money);在console顯示
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      const url = "http://140.125.45.160:8000/info/"; // origin api url
+      const url = "http://140.125.45.160:8000/info"; // origin api url
       this.axios
         .post(`${cors}${url}`, {
           area: this.current_area,

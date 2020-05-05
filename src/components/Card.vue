@@ -7,7 +7,7 @@
           <v-card-title>{{person.name}}</v-card-title>
           <v-card-subtitle>{{person.cost}}</v-card-subtitle>
           <v-card-actions>
-            <v-btn color="green" text to="/Infopage">去看看</v-btn>
+            <v-btn color="green" text to='/Infopage'>去看看</v-btn>
             <v-spacer></v-spacer>
           </v-card-actions>
           <v-expand-transition>
@@ -25,6 +25,7 @@
 export default {
   data: () => ({
     show: false
+    
   }),
   props: {
     card_data: {
