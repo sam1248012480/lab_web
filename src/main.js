@@ -7,7 +7,6 @@ import axios from 'axios';
 import VueAxios from 'vue-axios'
 import Qs from 'qs';
 
-<<<<<<< HEAD
 import Viewer from 'v-viewer'
 import 'viewerjs/dist/viewer.css'
  
@@ -18,9 +17,7 @@ Viewer.setDefaults({
 
 
 Vue.config.productionTip = false
-=======
 Vue.prototype.Qs = Qs;
->>>>>>> 88fb2a3c1840e526071e40e721a8de9d048e05b5
 
 // 註冊到全局組件Vueaxios,axios step.2
 Vue.use(VueAxios, axios)
