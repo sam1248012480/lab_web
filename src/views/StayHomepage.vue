@@ -53,7 +53,7 @@ export default {
       }
     ],
     current_area: "台北",
-    current_money: "4000~5000"
+    current_money: "4500~5000"
   }),
 
   methods: {
@@ -66,16 +66,22 @@ export default {
       this.getData();
     },
     getData() {
-      // console.log(this.current_area, this.current_money);在console顯示
+      console.log(this.current_area, this.current_money);//在console顯示
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       const url = "http://140.125.45.160:8000/info"; // origin api url
       this.axios
-        .post(`${cors}${url}`, {
-          area: this.current_area,
-          cost: this.current_money
-        })
+        .post(
+          `${cors}${url}`,
+          this.Qs.stringify({
+            area: this.current_area,
+            cost: this.current_money
+          })
+        )
         .then(response => {
-          // console.log(response) 印資料在Console
+          console.log(response)
+          console.log(response.data.length)
+          
+          //印資料在Console
           this.card = response.data;
         })
         .catch(function(error) {
