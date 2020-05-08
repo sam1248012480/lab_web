@@ -71,6 +71,7 @@ export default {
         .post(
           `${cors}${url}`,
           this.Qs.stringify({
+            stay_or_delivery: "1",
             area: this.current_area,
             cost: this.current_money
           })

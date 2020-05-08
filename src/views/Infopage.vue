@@ -111,7 +111,7 @@ export default {
           },
           {
             name: "服務地區",
-            calories: response.data.area_id
+            calories: response.data.area_name
           },
           {
             name: "服務內容",
@@ -119,7 +119,7 @@ export default {
           },
           {
             name: "定點或外送",
-            calories: response.data.stay_or_delivery
+            calories: response.data.type_value
           }
         ];
         this.imgs = [
