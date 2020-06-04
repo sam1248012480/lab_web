@@ -16,25 +16,27 @@
 <script>
 export default {
   data: () => ({
-    default_color: "teal darken-3",
+    default_color: "blue darken-3",
     clicked_color: "#039BE5",
     area_data: [
       { name: "台北", clicked: true },
-      { name: "嘉義", clicked: false },
-      { name: "台中", clicked: false },
-      { name: "雲林", clicked: false },
+      { name: "新北", clicked: false},
+      { name: "桃園", clicked: false},
+      { name: "新竹", clicked: false },
       { name: "苗栗", clicked: false },
-      { name: "基隆", clicked: false },
+      { name: "台中", clicked: false },
+      { name: "南投", clicked: false },
+      { name: "彰化", clicked: false },
+      { name: "雲林", clicked: false },
+      { name: "嘉義", clicked: false },
+      { name: "台南", clicked: false },
       { name: "高雄", clicked: false },
       { name: "屏東", clicked: false },
-      { name: "台南", clicked: false },
-      { name: "花蓮", clicked: false },
-      { name: "彰化", clicked: false },
-      { name: "澎湖", clicked: false },
       { name: "台東", clicked: false },
-      { name: "南投", clicked: false },
+      { name: "花蓮", clicked: false },
       { name: "宜蘭", clicked: false },
-      { name: "新竹", clicked: false },
+      { name: "基隆", clicked: false },
+      { name: "澎湖", clicked: false },
       { name: "金門", clicked: false }
     ]
   }),

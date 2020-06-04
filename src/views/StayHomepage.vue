@@ -1,5 +1,5 @@
 <template>
-  <v-app class="grey lighten-4">
+  <v-app class="blue lighten-5">
     <!-- 裡面一定要用到不然會報錯(step.3) -->
     <loading
       :active.sync="isLoading"
@@ -53,7 +53,7 @@ export default {
       this.isLoading = true;
       console.log(this.current_area, this.current_money);
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      const url = "http://140.125.45.160:8000/info"; // origin api url
+      const url = "http://140.125.45.155/info"; // origin api url
       this.axios
         .post(
           `${cors}${url}`,
