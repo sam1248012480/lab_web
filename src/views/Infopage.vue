@@ -1,5 +1,5 @@
 <template>
-  <v-container class="grey lighten-5" fluid>
+  <v-container class="blue lighten-5" fluid>
     <v-row>
       <v-col cols="4" md="4">
         <v-img :src="this.avatar" aspect-ratio="1"></v-img>
@@ -88,7 +88,7 @@ export default {
   mounted() {
     console.log(this.$route.query.id);
     const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-    const url = "http://140.125.45.160:8000/info/" + this.$route.query.id; // origin api url
+    const url = "http://140.125.45.155/info/" + this.$route.query.id; // origin api url
     this.axios
       .get(`${cors}${url}`)
       .then(response => {

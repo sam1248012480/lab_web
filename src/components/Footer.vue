@@ -2,7 +2,7 @@
   <v-footer dark padless>
     <v-card class="flex" flat tile>
       <v-card-title class="teal">
-        <strong class="subheading">想約嗎?裕鈞!!</strong>
+        <strong class="subheading">Welcome to GYM</strong>
 
         <v-spacer></v-spacer>
 
@@ -12,8 +12,8 @@
       </v-card-title>
 
       <v-card-text class="py-2 white--text text-center">
-        {{ new Date().getFullYear() }} —
-        <strong>約起來!</strong>
+        {{ new Date().getFullYear() }} 
+      
       </v-card-text>
     </v-card>
   </v-footer>
@@ -28,7 +28,7 @@ export default {
   }),
   mounted() {
     const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-    const url = "http://140.125.45.160:8000/offo"; // origin api url
+    const url = "http://140.125.45.155/offo"; // origin api url
     this.axios
       .get(`${cors}${url}`)
       .then(response => {

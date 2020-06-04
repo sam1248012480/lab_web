@@ -6,34 +6,43 @@ Vue.use(Vuetify);
 Vue.use(VueI18n)
 
 const messages = {
-    en: {
-      $vuetify: {
-        dataIterator: {
-          rowsPerPageText: 'Items per page:',
-          pageText: '{0}-{1} of {2}',
-        },
+  en: {
+    $vuetify: {
+      dataIterator: {
+        rowsPerPageText: 'Items per page:',
+        pageText: '{0}-{1} of {2}',
       },
     },
-    sv: {
-      $vuetify: {
-        dataIterator: {
-          rowsPerPageText: 'Element per sida:',
-          pageText: '{0}-{1} av {2}',
-        },
+  },
+  tw: {
+    $vuetify: {
+      dataIterator: {
+        rowsPerPageText: '每頁項目:',
+        pageText: '{0}-{1} of {2}',
       },
     },
-  }
-  
+  },
+  sv: {
+    $vuetify: {
+      dataIterator: {
+        rowsPerPageText: 'Element per sida:',
+        pageText: '{0}-{1} av {2}',
+      },
+    },
+  },
+}
+
 
 
 const i18n = new VueI18n({
-    locale: 'sv', // set locale
-    messages, // set locale messages
-  })
+  locale: [ 'en','tw','sv',],// set locale
+  messages, // set locale messages
+})
 
 export default new Vuetify({
-    lang: {
-        t: (key, ...params) => i18n.t(key, params),
-      },
+  lang: {
+    t: (key, ...params) => i18n.t(key, params),
+  },
+  
 
 })

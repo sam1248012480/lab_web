@@ -1,10 +1,13 @@
 <template>
-  <v-app class="grey lighten-4">
-    <NavBar></NavBar>
+  <v-app style="background-Color: #E3F2FD">
+    <NavBar ></NavBar>
+    
     <!-- 裡面一定要用到不然會報錯(step.3) -->
-    <v-content>
+    <!-- <HelloWorld :msg="$t('GENERAL.WELCOME_WORD')" /> -->
+    <v-content >
       <router-view></router-view>
     </v-content>
+    
     <Footer></Footer>
   </v-app>
 </template>

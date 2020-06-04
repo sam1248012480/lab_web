@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios';
 import VueAxios from 'vue-axios'
 import Qs from 'qs';
+import i18n from './plugins/vue-i18n'// i18n
 
 import Viewer from 'v-viewer'
 import 'viewerjs/dist/viewer.css'
@@ -13,6 +14,7 @@ Vue.use(Viewer);
 Viewer.setDefaults({
   Options: { "inline": true, "button": true, "navbar": true, "title": true, "toolbar": true, "tooltip": true, "movable": true, "zoomable": true, "rotatable": true, "scalable": true, "transition": true, "fullscreen": true, "keyboard": true, "url": "data-source" }
 });
+
 
 
 Vue.config.productionTip = false
@@ -24,6 +26,9 @@ Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
 new Vue({
   router,
+  i18n,
   vuetify,
   render: h => h(App)
 }).$mount('#app')
+
+
