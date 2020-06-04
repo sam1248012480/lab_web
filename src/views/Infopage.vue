@@ -23,29 +23,28 @@
       </v-col>
     </v-row>
 
-    <viewer>
-      <v-row>
-        <v-col cols="12">
-          <v-card>
-            <v-container fluid>
-              <v-row>
-                <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4">
-                  <v-card flat tile class="d-flex">
-                    <img :src="src.url" style="width:100%; height:100%;" />
-                    <template v-slot:placeholder>
-                      <v-row class="fill-height ma-0" align="center" justify="center">
-                        <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
-                      </v-row>
-                    </template>
-                  </v-card>
-                </v-col>
-              </v-row>
-            </v-container>
-          </v-card>
-        </v-col>
-      </v-row>
-    </viewer>
-
+    <v-row>
+      <v-col cols="12">
+        <v-card>
+          <v-container fluid>
+            <v-row>
+              <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4">
+                <v-card flat tile class="d-flex">
+                  <viewer>
+                    <img :src="src.url" style="width:100%; height:100%; max-width:100%; max-height:100%;" />
+                  </viewer>
+                  <template v-slot:placeholder>
+                    <v-row class="fill-height ma-0" align="center" justify="center">
+                      <v-progress-circular indeterminate color="grey lighten-5"></v-progress-circular>
+                    </v-row>
+                  </template>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </v-card>
+      </v-col>
+    </v-row>
     <v-row justify="space-around">
       <v-col>
         <video-player
@@ -70,21 +69,22 @@
 import { videoPlayer } from "vue-video-player";
 import "video.js/dist/video-js.css";
 import "vue-video-player/src/custom-theme.css";
-
+// import Clickpicture from "@/components/Clickpicture";
 export default {
   components: {
     videoPlayer
+    // Clickpicture
   },
-  data: () => ({
-    dense: false,
-    fixedHeader: false,
-    height: 300,
-    desserts: [],
-    name: "",
-    avatar: "",
-    video: "",
-    imgs: []
-  }),
+  data() {
+    return {
+      desserts: [],
+      name: "",
+      avatar: "",
+      video: "",
+      imgs: []
+    };
+  },
+
   mounted() {
     console.log(this.$route.query.id);
     const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
