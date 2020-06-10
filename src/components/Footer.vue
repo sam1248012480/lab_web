@@ -36,7 +36,7 @@ export default {
         this.line_info = response.data[0].line_info;
       })
       .catch(function(error) {
-        console.log(error);
+        // console.log(error);
       });
   },
   methods: {
