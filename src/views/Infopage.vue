@@ -86,13 +86,13 @@ export default {
   },
 
   mounted() {
-    console.log(this.$route.query.id);
+    // console.log(this.$route.query.id);
     const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
     const url = "http://140.125.45.155/info/" + this.$route.query.id; // origin api url
     this.axios
       .get(`${cors}${url}`)
       .then(response => {
-        console.log(response); //印資料在Console
+        // console.log(response); //印資料在Console
         this.name = response.data.name;
         this.avatar = response.data.img1;
         this.video = response.data.video;
@@ -134,8 +134,8 @@ export default {
           }
         ];
       })
-      .catch(function(error) {
-        console.log(error);
+      .catch(function() {
+        // console.log(error);
       });
   }
 };

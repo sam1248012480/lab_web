@@ -51,7 +51,7 @@ export default {
     },
     getData() {
       this.isLoading = true;
-      console.log(this.current_area, this.current_money);
+      // console.log(this.current_area, this.current_money);
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       const url = "http://140.125.45.155/info"; // origin api url
       this.axios
@@ -67,8 +67,8 @@ export default {
           this.card = response.data;
           this.isLoading = false;
         })
-        .catch(function(error) {
-          console.log(error);
+        .catch(function() {
+          // console.log(error);
           this.isLoading = false;
         });
     }
