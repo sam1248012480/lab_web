@@ -28,7 +28,7 @@ export default {
   }),
   mounted() {
     const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-    const url = "http://140.125.45.155/offo"; // origin api url
+    const url = "http://gym.gym141.com/offo"; // origin api url
     this.axios
       .get(`${cors}${url}`)
       .then(response => {
