@@ -35,7 +35,7 @@ export default {
         this.wechat_info = response.data[0].wechat_info;
         this.line_info = response.data[0].line_info;
       })
-      .catch(function(error) {
+      .catch(function() {
         // console.log(error);
       });
   },
