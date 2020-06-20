@@ -12,7 +12,7 @@
       </v-toolbar-title>
 
       <v-spacer></v-spacer>
-      <v-btn text color="yellow" href="http://gym.gym141.com/admin" height="30" width="10">
+      <v-btn text color="yellow" href="http://localhost:8000/admin" height="30" width="10">
         <!--按鈕連結-->
         <span>登入</span>
         <v-icon right>mdi-exit-to-app</v-icon>
