@@ -87,10 +87,10 @@ export default {
 
   mounted() {
     // console.log(this.$route.query.id);
-    const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+    // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
     const url = "http://gym.gym141.com/api/info/" + this.$route.query.id; // origin api url
     this.axios
-      .get(`${cors}${url}`)
+      .get(`${url}`)
       .then(response => {
         // console.log(response); //印資料在Console
         this.name = response.data.name;
