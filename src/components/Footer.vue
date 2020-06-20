@@ -27,10 +27,10 @@ export default {
     icons: ["mdi-wechat", "fa-brands:line"]
   }),
   mounted() {
-    const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+    // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
     const url = "http://gym.gym141.com/api/offo"; // origin api url
     this.axios
-      .get(`${cors}${url}`)
+      .get(`${url}`)
       .then(response => {
         this.wechat_info = response.data[0].wechat_info;
         this.line_info = response.data[0].line_info;

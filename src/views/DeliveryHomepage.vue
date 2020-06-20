@@ -61,11 +61,11 @@ export default {
     getData() {
       this.isLoading = true;
       // console.log(this.current_area, this.current_money);
-      const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      const url = "http://gym.gym141.com/api/info"; // origin api url
+      // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+      const url = "http://gym.gym141.com/api/info"; // origin api
       this.axios
         .post(
-          `${cors}${url}`,
+          `${url}`,
           this.Qs.stringify({
             stay_or_delivery: "1",
             area: this.current_area,
