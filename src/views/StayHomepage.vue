@@ -53,7 +53,7 @@ export default {
       this.isLoading = true;
       // console.log(this.current_area, this.current_money);
       const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
-      const url = "http://localhost:8000/info"; // origin api url
+      const url = "http://gym.gym141.com/api/info"; // origin api url
       this.axios
         .post(
           `${cors}${url}`,
