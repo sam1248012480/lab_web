@@ -19,7 +19,7 @@
     "vue-material-design-icons": "^4.6.0",
     "vue-router": "^3.1.5",
     "vue-video-player": "^5.0.2",
-    "vuetify": "^2.2.26",
+    "vuetify": "^2.3.2",
     "vuetify-media-player": "^0.8.1",
     "vuetify-video-parallax": "^1.0.2"
   },

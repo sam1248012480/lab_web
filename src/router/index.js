@@ -7,8 +7,6 @@ import Home from '../views/Home.vue'
 import StayHomepage from '../views/StayHomepage.vue'
 import GameRule from '../views/GameRule.vue'
 
-import i18n_test from '../views/i18n_test.vue'
-
 Vue.use(VueRouter)
 
 const routes = [
@@ -31,11 +29,6 @@ const routes = [
     path: '/GameRule',
     name: 'GameRule',
     component: GameRule
-  },
-  {
-    path: '/i18n',
-    name: 'i18n',
-    component: i18n_test
   },
   //需註冊Views網頁 step.2
   {
