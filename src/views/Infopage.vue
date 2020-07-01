@@ -94,8 +94,8 @@ export default {
       .then(response => {
         // console.log(response); //印資料在Console
         this.name = response.data.name;
-        this.avatar = response.data.img1;
-        this.video = response.data.video;
+        this.avatar = this.parse_url(response.data.img1);
+        this.video = this.parse_url(response.data.video);
         this.desserts = [
           {
             name: "年紀",
@@ -124,19 +124,25 @@ export default {
         ];
         this.imgs = [
           {
-            url: response.data.img2
+            url: this.parse_url(response.data.img2)
           },
           {
-            url: response.data.img3
+            url: this.parse_url(response.data.img3)
           },
           {
-            url: response.data.img4
+            url: this.parse_url(response.data.img4)
           }
         ];
       })
       .catch(function() {
         // console.log(error);
       });
+  },
+  methods:{
+    parse_url(url){
+        var _url = new URL(url)
+        return "http://" + _url.hostname + _url.pathname
+      }
   }
 };
 </script>

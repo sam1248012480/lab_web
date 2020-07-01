@@ -3,7 +3,7 @@
     <v-layout row wrap>
       <v-flex xl2 lg2 md3 sm3 xs6 v-for="person in card_data" :key="person.name">
         <v-card class="mx-auto">
-          <v-img :src="person.img1" aspect-ratio="0.9"></v-img>
+          <v-img :src="parse_url(person.img1)" aspect-ratio="0.9"></v-img>
           <v-card-title>{{person.name}}</v-card-title>
           <v-card-subtitle>{{person.cost}}</v-card-subtitle>
           <v-card-actions>
@@ -23,6 +23,12 @@ export default {
       type: Array,
       required: true
     }
+  },
+  methods:{
+    parse_url(url){
+        var _url = new URL(url)
+        return "http://" + _url.hostname + _url.pathname
+      }
   }
 };
 </script>
