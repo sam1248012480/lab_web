@@ -41,10 +41,6 @@ export default {
     ]
   }),
   props: {
-    // area_data: {
-    //   type: Array,
-    //   required: true
-    // },
     callback: {
       type: Function
     }
