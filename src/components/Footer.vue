@@ -43,10 +43,10 @@ export default {
     footer_click(icon) {
       if (icon.includes("line")) {
         if(this.line_info != "")
-          window.location.replace(this.line_info);
+          window.location.href(this.line_info);
       } else {
         if(this.wechat_info != "")
-          window.location.replace(this.wechat_info);
+          window.location.href(this.wechat_info);
       }
     }
   }
