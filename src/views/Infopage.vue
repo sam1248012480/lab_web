@@ -31,7 +31,7 @@
               <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4">
                 <v-card flat tile class="d-flex">
                   <viewer>
-                    <img :src="src.url" style="width:100%; height:100%; max-width:100%; max-height:100%;" />
+                    <img :src="src.url" style="max-width:100%; max-height:100%;" />
                   </viewer>
                   <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -45,7 +45,8 @@
         </v-card>
       </v-col>
     </v-row>
-    <v-row justify="space-around">
+    <div v-if="this.video">
+      <v-row>
       <v-col>
         <video-player
           class="video-player vjs-custom-skin"
@@ -56,11 +57,29 @@
           type: 'video/mp4',
           src: this.video
       }],
-          
     }"
         ></video-player>
       </v-col>
     </v-row>
+    </div>
+    <div v-else>
+      <v-row  style="display:none">
+      <v-col>
+        <video-player
+          class="video-player vjs-custom-skin"
+          ref="videoPlayer"
+          :playsinline="true"
+          :options="{
+          sources: [{
+          type: 'video/mp4',
+          src: this.video
+      }],
+    }"
+        ></video-player>
+      </v-col>
+    </v-row>
+    </div>
+    
   </v-container>
 </template>
 
@@ -92,10 +111,9 @@ export default {
     this.axios
       .get(`${url}`)
       .then(response => {
-        // console.log(response); //印資料在Console
+        // console.log(response.data); //印資料在Console
         this.name = response.data.name;
         this.avatar = this.parse_url(response.data.img1);
-        this.video = this.parse_url(response.data.video);
         this.desserts = [
           {
             name: "年紀",
@@ -122,6 +140,7 @@ export default {
             calories: response.data.type_value
           }
         ];
+        this.video = this.parse_url(response.data.video);
         this.imgs = [
           {
             url: this.parse_url(response.data.img2)
@@ -135,7 +154,7 @@ export default {
         ];
       })
       .catch(function() {
-        // console.log(error);
+        // console.log();
       });
   },
   methods:{
