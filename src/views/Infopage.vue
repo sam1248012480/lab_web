@@ -31,7 +31,12 @@
               <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4">
                 <v-card flat tile class="d-flex">
                   <viewer>
-                    <img :src="src.url" style="max-width:100%; max-height:100%;" />
+                    <div v-if="src.url">
+                    <img :src="src.url" style="max-width:100%; max-height:100%;"/>
+                    </div>
+                    <div v-else>
+                    <img :src="src.url" style="display:none;" />
+                    </div>
                   </viewer>
                   <template v-slot:placeholder>
                     <v-row class="fill-height ma-0" align="center" justify="center">
@@ -62,8 +67,9 @@
       </v-col>
     </v-row>
     </div>
+
     <div v-else>
-      <v-row  style="display:none">
+      <v-row style="display:none;">
       <v-col>
         <video-player
           class="video-player vjs-custom-skin"
@@ -112,6 +118,19 @@ export default {
       .get(`${url}`)
       .then(response => {
         // console.log(response.data); //印資料在Console
+        if (response.data.img2===null) {this.url_img2 = null}
+        else {this.url_img2 =this.parse_url(response.data.img2)}
+
+        if (response.data.img3===null) {this.url_img3 = null}
+        else {this.url_img3 =this.parse_url(response.data.img3)}
+
+        if (response.data.img4===null) {this.url_img4 = null}
+        else {this.url_img4 =this.parse_url(response.data.img4)}
+        console.log(this.url_img4); //印資料在Console
+        
+        if (response.data.video===null) {this.video = null}
+        else {this.video = this.parse_url(response.data.video)}
+
         this.name = response.data.name;
         this.avatar = this.parse_url(response.data.img1);
         this.desserts = [
@@ -140,21 +159,21 @@ export default {
             calories: response.data.type_value
           }
         ];
-        this.video = this.parse_url(response.data.video);
         this.imgs = [
           {
-            url: this.parse_url(response.data.img2)
+            url: this.url_img2
           },
           {
-            url: this.parse_url(response.data.img3)
+            url: this.url_img3
           },
           {
-            url: this.parse_url(response.data.img4)
-          }
+            url: this.url_img4
+          },
         ];
+        
       })
       .catch(function() {
-        // console.log();
+        
       });
   },
   methods:{
