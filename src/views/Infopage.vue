@@ -126,7 +126,6 @@ export default {
 
         if (response.data.img4===null) {this.url_img4 = null}
         else {this.url_img4 =this.parse_url(response.data.img4)}
-        console.log(this.url_img4); //印資料在Console
         
         if (response.data.video===null) {this.video = null}
         else {this.video = this.parse_url(response.data.video)}
