@@ -28,7 +28,7 @@
         <v-card>
           <v-container fluid>
             <v-row>
-              <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4">
+              <v-col v-for="src in imgs" :key="src.url" class="d-flex child-flex" cols="4" style="align-items:center;justify-content:center;">
                 <v-card flat tile class="d-flex">
                   <viewer>
                     <div v-if="src.url">
@@ -71,17 +71,7 @@
     <div v-else>
       <v-row style="display:none;">
       <v-col>
-        <video-player
-          class="video-player vjs-custom-skin"
-          ref="videoPlayer"
-          :playsinline="true"
-          :options="{
-          sources: [{
-          type: 'video/mp4',
-          src: this.video
-      }],
-    }"
-        ></video-player>
+
       </v-col>
     </v-row>
     </div>
@@ -112,10 +102,10 @@ export default {
 
   mounted() {
     // console.log(this.$route.query.id);
-    // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+    const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
     const url = "http://gym.gym141.com/api/info/" + this.$route.query.id; // origin api url
     this.axios
-      .get(`${url}`)
+      .get(`${cors+url}`)
       .then(response => {
         // console.log(response.data); //印資料在Console
         if (response.data.img2===null) {this.url_img2 = null}
