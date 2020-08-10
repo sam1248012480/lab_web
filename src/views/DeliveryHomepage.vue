@@ -21,7 +21,7 @@ import TabItems from "@/components/TabItems";
 import Card from "@/components/Card";
 import Loading from "vue-loading-overlay";
 import "vue-loading-overlay/dist/vue-loading.css";
-
+import global_ from "../Global";
 
 export default {
   name: "DeliveryHomepage",
@@ -31,8 +31,6 @@ export default {
     TabItems,
     Card,
     Loading
-
-
   },
   data: () => ({
     money: [
@@ -43,33 +41,31 @@ export default {
       { money: "20000 ↑" }
     ],
     card: [],
-    current_area: "台北",
-    current_money: "4000~5000",
     isLoading: false,
     loader_height: 128,
     loader_width: 128
   }),
   methods: {
     btn_event(name) {
-      this.current_area = name;
+      global_.current_area = name;
       this.getData();
     },
     tab_event(name) {
-      this.current_money = name;
+      global_.current_money = name;
       this.getData();
     },
     getData() {
       this.isLoading = true;
-      // console.log(this.current_area, this.current_money);
-      // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+      console.log(global_.current_area, global_.current_money);
+      const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       const url = "http://gym.gym141.com/api/info"; // origin api
       this.axios
         .post(
-          `${url}`,
+          `${cors + url}`,
           this.Qs.stringify({
             stay_or_delivery: "1",
-            area: this.current_area,
-            cost: this.current_money
+            area: global_.current_area,
+            cost: global_.current_money
           })
         )
         .then(response => {

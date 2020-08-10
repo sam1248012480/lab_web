@@ -14,14 +14,16 @@
 </template>
 
 <script>
+import global_ from "../Global";
+
 export default {
   data: () => ({
     default_color: "blue darken-3",
     clicked_color: "#039BE5",
     area_data: [
-      { name: "台北", clicked: true },
-      { name: "新北", clicked: false},
-      { name: "桃園", clicked: false},
+      { name: "台北", clicked: false },
+      { name: "新北", clicked: false },
+      { name: "桃園", clicked: false },
       { name: "新竹", clicked: false },
       { name: "苗栗", clicked: false },
       { name: "台中", clicked: false },
@@ -59,6 +61,10 @@ export default {
         this.current_click = i;
       }
     }
+  },
+  created() {
+    var area = global_.current_area;
+    this.btn_click(this.area_data[this.area_data.findIndex(x => x.name === area)]);
   }
 };
 </script>
