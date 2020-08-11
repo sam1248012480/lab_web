@@ -56,12 +56,12 @@ export default {
     },
     getData() {
       this.isLoading = true;
-      console.log(global_.current_area, global_.current_money);
-      const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
+      // console.log(global_.current_area, global_.current_money);
+      // const cors = "https://cors-anywhere.herokuapp.com/"; // use cors-anywhere to fetch api data
       const url = "http://gym.gym141.com/api/info"; // origin api
       this.axios
         .post(
-          `${cors + url}`,
+          `${url}`,
           this.Qs.stringify({
             stay_or_delivery: "1",
             area: global_.current_area,
